@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Open Weather Map API</string>
+    <string name="API_KEY">078a58c0462312f3c2f72810e18a4a15</string>
+    <string name="ICON_BASE_URL">http://openweathermap.org/img/</string>
+    <string name="DEGREES_F">&#176;F</string>
+    <string name="FAHRENHEIT">units=imperial</string>
+</resources>

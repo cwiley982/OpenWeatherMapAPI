@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.widget.LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.widget.RelativeLayout
+        android:id="@+id/daily_list_item"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--date-->
+        <TextView
+            android:id="@+id/dateTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="30sp" />
+
+        <!--high/low-->
+        <TextView
+            android:id="@+id/highLowTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:textSize="30sp"/>
+
+    </android.widget.RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/hourly_recycler_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scrollbars="horizontal"/>
+
+</android.widget.LinearLayout>

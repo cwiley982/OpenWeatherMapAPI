@@ -1,0 +1,114 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Volumes/workspace/personal/OpenWeatherMapAPI/app/src/main/AndroidManifest.xml:2:1-27:12
+INJECTED from /Volumes/workspace/personal/OpenWeatherMapAPI/app/src/main/AndroidManifest.xml:2:1-27:12
+INJECTED from /Volumes/workspace/personal/OpenWeatherMapAPI/app/src/main/AndroidManifest.xml:2:1-27:12
+INJECTED from /Volumes/workspace/personal/OpenWeatherMapAPI/app/src/main/AndroidManifest.xml:2:1-27:12
+MERGED from [com.android.support:appcompat-v7:27.1.1] /Users/cwiley/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/41447001763ba2ddce30d2605d98c1f5/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0] /Users/cwiley/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.0.aar/4e0b3a91541c8a91c3315742cc3769dc/AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:recyclerview-v7:27.1.1] /Users/cwiley/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-27.1.1.aar/d6f3b35a73d17e94a40ee7d711338087/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-fragment:27.1.1] /Users/cwiley/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.1.aar/cd3875a94e4dbf6025f1c8efecebcd66/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] /Users/cwiley/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.1.1.aar/c0cfe5cb125565b904b19a64d738db21/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:27.1.1] /Users/cwiley/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.1.aar/f74fc566d00e4059495c1383a7eff263/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:27.1.1] /Users/cwiley/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.1.aar/d8a49ecbc417af0b1ecb02ce417352d5/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:27.1.1] /Users/cwiley/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.1.1.aar/4578664e220dc375d71e13af714d6c96/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:27.1.1] /Users/cwiley/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/4dbe3cc734db8d2b0c23675ea3c4dd74/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /Users/cwiley/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/c558d2dc2ee9153e9d2daceb2f5c0016/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /Users/cwiley/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/ef4e9cd29c9a21992b595b4d2e27f125/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /Users/cwiley/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/fb46fba714be3f500030096b9f5313af/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.0] /Users/cwiley/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/cf3e81b3a91bd86b3cacb7c7367afd27/AndroidManifest.xml:17:1-22:12
+INJECTED from /Volumes/workspace/personal/OpenWeatherMapAPI/app/src/main/AndroidManifest.xml:2:1-27:12
+INJECTED from /Volumes/workspace/personal/OpenWeatherMapAPI/app/src/main/AndroidManifest.xml:2:1-27:12
+INJECTED from /Volumes/workspace/personal/OpenWeatherMapAPI/app/src/main/AndroidManifest.xml:2:1-27:12
+	package
+		ADDED from /Volumes/workspace/personal/OpenWeatherMapAPI/app/src/main/AndroidManifest.xml:3:5-49
+		INJECTED from /Volumes/workspace/personal/OpenWeatherMapAPI/app/src/main/AndroidManifest.xml
+		INJECTED from /Volumes/workspace/personal/OpenWeatherMapAPI/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Volumes/workspace/personal/OpenWeatherMapAPI/app/src/main/AndroidManifest.xml
+		ADDED from /Volumes/workspace/personal/OpenWeatherMapAPI/app/src/main/AndroidManifest.xml:2:1-27:12
+		INJECTED from /Volumes/workspace/personal/OpenWeatherMapAPI/app/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /Volumes/workspace/personal/OpenWeatherMapAPI/app/src/main/AndroidManifest.xml
+		ADDED from /Volumes/workspace/personal/OpenWeatherMapAPI/app/src/main/AndroidManifest.xml:2:1-27:12
+		INJECTED from /Volumes/workspace/personal/OpenWeatherMapAPI/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Volumes/workspace/personal/OpenWeatherMapAPI/app/src/main/AndroidManifest.xml:2:11-69
+uses-permission#android.permission.INTERNET
+ADDED from /Volumes/workspace/personal/OpenWeatherMapAPI/app/src/main/AndroidManifest.xml:5:5-66
+	android:name
+		ADDED from /Volumes/workspace/personal/OpenWeatherMapAPI/app/src/main/AndroidManifest.xml:5:22-64
+application
+ADDED from /Volumes/workspace/personal/OpenWeatherMapAPI/app/src/main/AndroidManifest.xml:7:5-25:19
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0] /Users/cwiley/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.0.aar/4e0b3a91541c8a91c3315742cc3769dc/AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0] /Users/cwiley/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.0.aar/4e0b3a91541c8a91c3315742cc3769dc/AndroidManifest.xml:9:5-20
+	android:supportsRtl
+		ADDED from /Volumes/workspace/personal/OpenWeatherMapAPI/app/src/main/AndroidManifest.xml:12:9-35
+	android:label
+		ADDED from /Volumes/workspace/personal/OpenWeatherMapAPI/app/src/main/AndroidManifest.xml:10:9-41
+	android:roundIcon
+		ADDED from /Volumes/workspace/personal/OpenWeatherMapAPI/app/src/main/AndroidManifest.xml:11:9-54
+	android:icon
+		ADDED from /Volumes/workspace/personal/OpenWeatherMapAPI/app/src/main/AndroidManifest.xml:9:9-43
+	android:allowBackup
+		ADDED from /Volumes/workspace/personal/OpenWeatherMapAPI/app/src/main/AndroidManifest.xml:8:9-35
+	android:theme
+		ADDED from /Volumes/workspace/personal/OpenWeatherMapAPI/app/src/main/AndroidManifest.xml:13:9-40
+activity#com.caitlynwiley.openweathermapapi.activity.MainActivity
+ADDED from /Volumes/workspace/personal/OpenWeatherMapAPI/app/src/main/AndroidManifest.xml:14:9-20:20
+	android:name
+		ADDED from /Volumes/workspace/personal/OpenWeatherMapAPI/app/src/main/AndroidManifest.xml:14:19-56
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /Volumes/workspace/personal/OpenWeatherMapAPI/app/src/main/AndroidManifest.xml:15:13-19:29
+action#android.intent.action.MAIN
+ADDED from /Volumes/workspace/personal/OpenWeatherMapAPI/app/src/main/AndroidManifest.xml:16:17-69
+	android:name
+		ADDED from /Volumes/workspace/personal/OpenWeatherMapAPI/app/src/main/AndroidManifest.xml:16:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Volumes/workspace/personal/OpenWeatherMapAPI/app/src/main/AndroidManifest.xml:18:17-77
+	android:name
+		ADDED from /Volumes/workspace/personal/OpenWeatherMapAPI/app/src/main/AndroidManifest.xml:18:27-74
+activity#com.caitlynwiley.openweathermapapi.activity.WeatherActivity
+ADDED from /Volumes/workspace/personal/OpenWeatherMapAPI/app/src/main/AndroidManifest.xml:22:9-24:20
+	android:name
+		ADDED from /Volumes/workspace/personal/OpenWeatherMapAPI/app/src/main/AndroidManifest.xml:22:19-59
+uses-sdk
+INJECTED from /Volumes/workspace/personal/OpenWeatherMapAPI/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Volumes/workspace/personal/OpenWeatherMapAPI/app/src/main/AndroidManifest.xml
+INJECTED from /Volumes/workspace/personal/OpenWeatherMapAPI/app/src/main/AndroidManifest.xml
+MERGED from [com.android.support:appcompat-v7:27.1.1] /Users/cwiley/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/41447001763ba2ddce30d2605d98c1f5/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.1] /Users/cwiley/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/41447001763ba2ddce30d2605d98c1f5/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0] /Users/cwiley/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.0.aar/4e0b3a91541c8a91c3315742cc3769dc/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0] /Users/cwiley/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.0.aar/4e0b3a91541c8a91c3315742cc3769dc/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:recyclerview-v7:27.1.1] /Users/cwiley/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-27.1.1.aar/d6f3b35a73d17e94a40ee7d711338087/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:27.1.1] /Users/cwiley/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-27.1.1.aar/d6f3b35a73d17e94a40ee7d711338087/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] /Users/cwiley/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.1.aar/cd3875a94e4dbf6025f1c8efecebcd66/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] /Users/cwiley/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.1.aar/cd3875a94e4dbf6025f1c8efecebcd66/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] /Users/cwiley/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.1.1.aar/c0cfe5cb125565b904b19a64d738db21/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] /Users/cwiley/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.1.1.aar/c0cfe5cb125565b904b19a64d738db21/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] /Users/cwiley/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.1.aar/f74fc566d00e4059495c1383a7eff263/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] /Users/cwiley/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.1.aar/f74fc566d00e4059495c1383a7eff263/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] /Users/cwiley/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.1.aar/d8a49ecbc417af0b1ecb02ce417352d5/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] /Users/cwiley/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.1.aar/d8a49ecbc417af0b1ecb02ce417352d5/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] /Users/cwiley/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.1.1.aar/4578664e220dc375d71e13af714d6c96/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] /Users/cwiley/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.1.1.aar/4578664e220dc375d71e13af714d6c96/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] /Users/cwiley/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/4dbe3cc734db8d2b0c23675ea3c4dd74/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] /Users/cwiley/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/4dbe3cc734db8d2b0c23675ea3c4dd74/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /Users/cwiley/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/c558d2dc2ee9153e9d2daceb2f5c0016/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /Users/cwiley/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/c558d2dc2ee9153e9d2daceb2f5c0016/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /Users/cwiley/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/ef4e9cd29c9a21992b595b4d2e27f125/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /Users/cwiley/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/ef4e9cd29c9a21992b595b4d2e27f125/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /Users/cwiley/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/fb46fba714be3f500030096b9f5313af/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /Users/cwiley/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/fb46fba714be3f500030096b9f5313af/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] /Users/cwiley/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/cf3e81b3a91bd86b3cacb7c7367afd27/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] /Users/cwiley/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/cf3e81b3a91bd86b3cacb7c7367afd27/AndroidManifest.xml:20:5-44
+INJECTED from /Volumes/workspace/personal/OpenWeatherMapAPI/app/src/main/AndroidManifest.xml
+INJECTED from /Volumes/workspace/personal/OpenWeatherMapAPI/app/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Volumes/workspace/personal/OpenWeatherMapAPI/app/src/main/AndroidManifest.xml
+		ADDED from /Volumes/workspace/personal/OpenWeatherMapAPI/app/src/main/AndroidManifest.xml
+		INJECTED from /Volumes/workspace/personal/OpenWeatherMapAPI/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Volumes/workspace/personal/OpenWeatherMapAPI/app/src/main/AndroidManifest.xml
+		ADDED from /Volumes/workspace/personal/OpenWeatherMapAPI/app/src/main/AndroidManifest.xml
+		INJECTED from /Volumes/workspace/personal/OpenWeatherMapAPI/app/src/main/AndroidManifest.xml
