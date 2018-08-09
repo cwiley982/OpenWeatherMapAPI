@@ -10,8 +10,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.caitlynwiley.openweathermapapi.R;
-import com.caitlynwiley.openweathermapapi.model.DailyData;
-import com.caitlynwiley.openweathermapapi.model.HourlyData;
+import com.caitlynwiley.openweathermapapi.api.model.DailyData;
+import com.caitlynwiley.openweathermapapi.api.model.HourlyData;
 
 import java.util.ArrayList;
 import java.util.List;

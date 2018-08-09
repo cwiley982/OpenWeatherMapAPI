@@ -10,7 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.caitlynwiley.openweathermapapi.R;
-import com.caitlynwiley.openweathermapapi.model.HourlyData;
+import com.caitlynwiley.openweathermapapi.api.model.HourlyData;
 
 import java.util.List;
 

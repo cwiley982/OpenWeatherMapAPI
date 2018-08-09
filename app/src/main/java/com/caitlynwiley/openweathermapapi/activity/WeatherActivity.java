@@ -9,8 +9,8 @@ import android.widget.TextView;
 
 import com.caitlynwiley.openweathermapapi.adapter.DaysAdapter;
 import com.caitlynwiley.openweathermapapi.R;
-import com.caitlynwiley.openweathermapapi.model.DailyData;
-import com.caitlynwiley.openweathermapapi.model.HourlyData;
+import com.caitlynwiley.openweathermapapi.api.model.DailyData;
+import com.caitlynwiley.openweathermapapi.api.model.HourlyData;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -23,7 +23,6 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutionException;

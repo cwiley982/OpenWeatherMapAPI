@@ -1,4 +1,4 @@
-package com.caitlynwiley.openweathermapapi.model;
+package com.caitlynwiley.openweathermapapi.api.model;
 
 import java.util.List;
 

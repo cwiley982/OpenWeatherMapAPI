@@ -9,8 +9,8 @@ import android.widget.TextView;
 
 import com.caitlynwiley.openweathermapapi.adapter.DaysAdapter;
 import com.caitlynwiley.openweathermapapi.R;
-import com.caitlynwiley.openweathermapapi.model.DailyData;
-import com.caitlynwiley.openweathermapapi.model.HourlyData;
+import com.caitlynwiley.openweathermapapi.api.model.DailyData;
+import com.caitlynwiley.openweathermapapi.api.model.HourlyData;
 
 import org.json.JSONArray;
 import org.json.JSONException;
