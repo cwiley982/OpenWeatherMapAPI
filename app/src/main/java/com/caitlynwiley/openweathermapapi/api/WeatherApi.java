@@ -1,20 +1,10 @@
 package com.caitlynwiley.openweathermapapi.api;
 
-import com.caitlynwiley.openweathermapapi.api.model.DailyData;
-import com.caitlynwiley.openweathermapapi.api.model.HourlyData;
+public class WeatherApi {
 
-import java.util.List;
+    private static final String BASE_URL = "https://api.openweathermap.org/data/2.5";
+    private static final String UNITS_AND_API_KEY = "&units=imperial&APPID=";
 
-import retrofit2.Call;
-import retrofit2.http.GET;
-import retrofit2.http.Path;
-
-public interface WeatherApi {
-
-    @GET("/data/2.5/forecast?zip={zip_code}&units=imperial&APPID=078a58c0462312f3c2f72810e18a4a15")
-    Call<List<HourlyData>> getHourlyData(@Path("zip_code") String zipCode);
-
-    @GET("/data/2.5/weather?zip={zip_code}&units=imperial&APPID=078a58c0462312f3c2f72810e18a4a15")
-    Call<DailyData> getDailyData(@Path("zip_code") String zipCode);
+    @GET(BASE_URL + "/forecast?zip={zip_code}")
 
 }

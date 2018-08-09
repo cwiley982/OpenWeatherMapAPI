@@ -2,11 +2,11 @@ package com.caitlynwiley.openweathermapapi.adapter;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.caitlynwiley.openweathermapapi.R;
@@ -81,27 +81,25 @@ public class DaysAdapter extends RecyclerView.Adapter<DaysAdapter.DaysViewHolder
         //define views
         TextView date;
         TextView hiLoTemp;
-        RecyclerView.Adapter myHourlyAdapter;
+        ListView hourlyListView;
+        // TODO: Do I need an adapter for Listview?
+        // ListView.Adapter myHourlyAdapter;
         List<HourlyData> myHourlyDataSource = new ArrayList<>();
-        RecyclerView mHourlyRecyclerView;
+        ListView mHourlyRecyclerView;
+        HoursAdapter adapter;
 
         public DaysViewHolder(View v) {
             super(v);
             //set fields
             date = v.findViewById(R.id.dateTextView);
             hiLoTemp = v.findViewById(R.id.highLowTextView);
-
-            // Set up hourly Recycler View
-            // maybe have days (List<DailyData>) hold a List<HourlyData>, can access that way?
-            mHourlyRecyclerView = v.findViewById(R.id.hourly_recycler_view);
-            mHourlyRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-            myHourlyAdapter = new HoursAdapter(myHourlyDataSource, R.layout.hourly_list_item, getContext());
-            mHourlyRecyclerView.setAdapter(myHourlyAdapter);
+            hourlyListView = v.findViewById(R.id.hourly_list_view);
         }
 
         public void setHourlyList(List<HourlyData> data) {
             myHourlyDataSource = data;
-            myHourlyAdapter.notifyDataSetChanged();
+            adapter = new HoursAdapter(getContext(), R.layout.hourly_list_item, myHourlyDataSource);
+            hourlyListView.setAdapter(adapter);
         }
     }
 }
