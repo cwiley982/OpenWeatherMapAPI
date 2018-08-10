@@ -1,44 +1,41 @@
 package com.caitlynwiley.openweathermapapi.activity;
 
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.widget.TextView;
 
-import com.caitlynwiley.openweathermapapi.adapter.DaysAdapter;
 import com.caitlynwiley.openweathermapapi.R;
+import com.caitlynwiley.openweathermapapi.api.WeatherApi;
 import com.caitlynwiley.openweathermapapi.api.model.DailyData;
-import com.caitlynwiley.openweathermapapi.api.model.HourlyData;
+import com.caitlynwiley.openweathermapapi.events.DailyDataUpdateEvent;
 
+import org.greenrobot.eventbus.EventBus;
 import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.ExecutionException;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+
+import timber.log.Timber;
 
 public class WeatherActivity extends AppCompatActivity{
 
-    private static final String BASE_URL = "https://api.openweathermap.org/data/2.5";
-    private static final String UNITS_AND_API_KEY = "&units=imperial&APPID=";
+    private static final String BASE_URL = "https://api.openweathermap.org/";
 
     TextView cityName;
     TextView currentTemp;
     String zipCode;
+    DailyData mDailyData;
 
-    RecyclerView mDailyRecyclerView;
+    //RecyclerView mDailyRecyclerView;
     List<DailyData> myDailyDataSource = new ArrayList<>();
-    RecyclerView.Adapter myDailyAdapter;
+    //RecyclerView.Adapter myDailyAdapter;
 
     String rawHourlyData;
     String rawDailyData;
@@ -49,7 +46,7 @@ public class WeatherActivity extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.weather_display);
+//        setContentView(R.layout.weather_display);
 
         Bundle extras = getIntent().getExtras();
         zipCode = extras.getString("ZIP");
@@ -58,8 +55,30 @@ public class WeatherActivity extends AppCompatActivity{
         cityName = findViewById(R.id.cityName);
         currentTemp = findViewById(R.id.cityTemp);
 
+
+        Retrofit retro = new Retrofit.Builder().baseUrl(BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        WeatherApi api = retro.create(WeatherApi.class);
+        Call<DailyData> call = api.getDailyData(zipCode);
+        call.enqueue(new Callback<DailyData>() {
+            @Override
+            public void onResponse(Call<DailyData> call, Response<DailyData> response) {
+                if (response.isSuccessful() && response.body() != null) {
+                    EventBus.getDefault().post(new DailyDataUpdateEvent(response.body()));
+                } else {
+                    onFailure(call, new Exception("HTTP " + response.code()));
+                }
+            }
+
+            @Override
+            public void onFailure(Call<DailyData> call, Throwable t) {
+                Timber.e("GET failure: %s", t.getMessage());
+            }
+        });
+
         // Set up daily Recycler View
-        mDailyRecyclerView = findViewById(R.id.daily_recycler_view);
+        /*mDailyRecyclerView = findViewById(R.id.daily_recycler_view);
         mDailyRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         myDailyAdapter = new DaysAdapter(myDailyDataSource, R.layout.daily_list_item, getApplicationContext());
         mDailyRecyclerView.setAdapter(myDailyAdapter);
@@ -95,12 +114,12 @@ public class WeatherActivity extends AppCompatActivity{
         }
 
         ParseJSON parseJSON = new ParseJSON();
-        parseJSON.execute();
+        parseJSON.execute();*/
 
         // Now do something with that data (but what???)
     }
 
-    class ParseJSON extends AsyncTask<Void, Void, Void> {
+    /*class ParseJSON extends AsyncTask<Void, Void, Void> {
 
         @Override
         protected Void doInBackground(Void... voids) {
@@ -140,9 +159,9 @@ public class WeatherActivity extends AppCompatActivity{
             }
             return null;
         }
-    }
+    }*/
 
-    class GetHourlyWeatherInfo extends AsyncTask<String, Void, String> {
+    /*class GetHourlyWeatherInfo extends AsyncTask<String, Void, String> {
 
         private static final String HOURLY_WEATHER = "/forecast?zip=";
 
@@ -201,5 +220,5 @@ public class WeatherActivity extends AppCompatActivity{
             }
             return null;
         }
-    }
+    }*/
 }

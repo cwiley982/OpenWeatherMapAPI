@@ -17,4 +17,8 @@ public class DailyData {
 
     @SerializedName("name")
     private String city;
+
+    public String getCity() {
+        return city;
+    }
 }
