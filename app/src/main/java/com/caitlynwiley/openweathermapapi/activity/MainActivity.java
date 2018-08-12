@@ -8,6 +8,8 @@ import android.widget.EditText;
 
 import com.caitlynwiley.openweathermapapi.R;
 
+import timber.log.Timber;
+
 public class MainActivity extends AppCompatActivity {
 
     EditText zipCode;
@@ -18,6 +20,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         zipCode = findViewById(R.id.zipCode);
+
+        Timber.plant(new Timber.DebugTree());
     }
 
     public void showWeather(View view) {

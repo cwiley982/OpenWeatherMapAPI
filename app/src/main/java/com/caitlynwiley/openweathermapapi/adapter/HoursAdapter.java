@@ -5,9 +5,7 @@ import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import com.caitlynwiley.openweathermapapi.R;
@@ -15,15 +13,16 @@ import com.caitlynwiley.openweathermapapi.api.model.HourlyData;
 
 import java.util.List;
 
-public class HoursAdapter extends ArrayAdapter<HourlyData> {
+public class HoursAdapter /*extends RecyclerView.Adapter<HoursAdapter.HoursViewHolder>*/ {
 
     private List<HourlyData> hours;
+    private int colLayout;
     private Context context;
 
-    public HoursAdapter(@NonNull Context context, int resource, @NonNull List<HourlyData> objects) {
-        super(context, resource, objects);
-        setHours(objects);
-        //TODO: don't know what resource is
+    public HoursAdapter(List<HourlyData> hours, int colLayout, Context context) {
+        this.setHours(hours);
+        this.setColLayout(colLayout);
+        this.setContext(context);
     }
 
     public List<HourlyData> getHours() {
@@ -34,18 +33,45 @@ public class HoursAdapter extends ArrayAdapter<HourlyData> {
         this.hours = hours;
     }
 
+    public int getColLayout() {
+        return colLayout;
+    }
+
+    public void setColLayout(int colLayout) {
+        this.colLayout = colLayout;
+    }
+
     public Context getContext() {
-        return super.getContext();
+        return context;
     }
 
-    @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.hourly_list_item, parent, false);
+    public void setContext(Context context) {
+        this.context = context;
+    }
+
+    @NonNull
+    //@Override
+    public HoursViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        //inflate layout and return a new view holder
+        View view = LayoutInflater.from(parent.getContext())
+                .inflate(colLayout, parent, false);
         return new HoursViewHolder(view);
-        //TODO
     }
 
-    public static class HoursViewHolder extends ListView.ViewHolder {
+    //@Override
+    public void onBindViewHolder(@NonNull HoursViewHolder holder, int position) {
+        //binds view holder to data at position, update fields
+        holder.time.setText(hours.get(position).getTime());
+        //holder.icon.setImageBitmap(hours.get(position).getImage());
+        //holder.temp.setText(hours.get(position).getTemp() + getContext().getString(R.string.DEGREES_F)); //need to append degrees F here too
+    }
+
+    //@Override
+    public int getItemCount() {
+        return hours.size();
+    }
+
+    public static class HoursViewHolder /*extends RecyclerView.ViewHolder*/ {
 
         // define views
         TextView time;
@@ -53,7 +79,7 @@ public class HoursAdapter extends ArrayAdapter<HourlyData> {
         TextView temp;
 
         public HoursViewHolder(View v) {
-            super(v);
+            //super(v);
             // set views
             time = v.findViewById(R.id.timeTextView);
             icon = v.findViewById(R.id.weatherIcon);
