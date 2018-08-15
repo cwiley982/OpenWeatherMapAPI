@@ -8,15 +8,13 @@ import com.caitlynwiley.openweathermapapi.R;
 import com.caitlynwiley.openweathermapapi.api.WeatherApi;
 import com.caitlynwiley.openweathermapapi.api.model.DailyData;
 import com.caitlynwiley.openweathermapapi.api.model.HourlyData;
+import com.caitlynwiley.openweathermapapi.api.model.HourlyDataList;
 import com.caitlynwiley.openweathermapapi.events.DailyDataUpdateEvent;
 import com.caitlynwiley.openweathermapapi.events.HourlyDataUpdateEvent;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
-import org.json.JSONArray;
-import org.json.JSONObject;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -35,7 +33,9 @@ public class WeatherActivity extends AppCompatActivity{
     TextView currentTemp;
     String zipCode;
     DailyData mDailyData;
-    List<HourlyData> mHourlyDataList;
+    HourlyDataList mHourlyDataList;
+    private boolean mDailyDataReturned;
+    private boolean mHourlyDataReturned;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +49,9 @@ public class WeatherActivity extends AppCompatActivity{
         cityName = findViewById(R.id.cityName);
         currentTemp = findViewById(R.id.cityTemp);
 
+        mDailyDataReturned = false;
+        mHourlyDataReturned = false;
+
 
         Retrofit retro = new Retrofit.Builder().baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
@@ -59,7 +62,9 @@ public class WeatherActivity extends AppCompatActivity{
             @Override
             public void onResponse(Call<DailyData> call, Response<DailyData> response) {
                 if (response.isSuccessful() && response.body() != null) {
-                    EventBus.getDefault().post(new DailyDataUpdateEvent(response.body()));
+                    mDailyData = response.body();
+                    mDailyDataReturned = true;
+                    Timber.d("Daily Data call successful");
                 } else {
                     onFailure(call, new Exception("HTTP " + response.code()));
                 }
@@ -71,31 +76,28 @@ public class WeatherActivity extends AppCompatActivity{
             }
         });
 
-        Call<List<HourlyData>> hourlyCall = api.getHourlyData(zipCode);
-        hourlyCall.enqueue(new Callback<List<HourlyData>>() {
+        Call<HourlyDataList> hourlyCall = api.getHourlyData(zipCode);
+        hourlyCall.enqueue(new Callback<HourlyDataList>() {
             @Override
-            public void onResponse(Call<List<HourlyData>> call, Response<List<HourlyData>> response) {
+            public void onResponse(Call<HourlyDataList> call, Response<HourlyDataList> response) {
                 if (response.isSuccessful() &&  response.body() != null) {
-                    EventBus.getDefault().post(new HourlyDataUpdateEvent(response.body()));
+                    mHourlyDataList = response.body();
+                    mHourlyDataReturned = true;
+                    Timber.d("Hourly Data call successful");
                 } else {
                     onFailure(call, new Exception("HTTP " + response.code()));
                 }
             }
 
             @Override
-            public void onFailure(Call<List<HourlyData>> call, Throwable t) {
+            public void onFailure(Call<HourlyDataList> call, Throwable t) {
                 Timber.e("GET failure: %s", t.getMessage());
             }
         });
-    }
 
-    @Subscribe
-    public void onEvent(DailyDataUpdateEvent event) {
-        mDailyData = event.getDailyData();
-    }
+        // Also maybe show a loading screen so it doesn't just get stuck on the zip code screen
 
-    @Subscribe
-    public void onEvent(HourlyDataUpdateEvent event) {
-        mHourlyDataList = event.getList();
+        //cityName.setText(mDailyData.getCity());
+        //currentTemp.setText(mDailyData.getTemp());
     }
 }

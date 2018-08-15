@@ -21,4 +21,8 @@ public class DailyData {
     public String getCity() {
         return city;
     }
+
+    public String getTemp() {
+        return main.getCurrentTemp();
+    }
 }

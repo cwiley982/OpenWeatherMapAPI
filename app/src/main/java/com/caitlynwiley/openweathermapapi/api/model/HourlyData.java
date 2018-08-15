@@ -4,6 +4,8 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
@@ -12,106 +14,66 @@ import java.net.URL;
 import java.util.concurrent.ExecutionException;
 
 public class HourlyData {
-    private String temp;
 
-    private String temp_min;
+    @SerializedName("main")
+    private MainData mainData;
 
-    private String temp_max;
-
-    private String dateString;
-
+    @SerializedName("dt")
     private String date;
 
-    private String description;
+    @SerializedName("weather[0]")
+    private Description desc;
 
-    private String windSpeed;
-
-    private String icon;
+    @SerializedName("wind")
+    private Wind wind;
 
     private Bitmap image;
 
-    public HourlyData() {
-
-    }
-
-    public HourlyData(String temp, String dateString, String description, String windSpeed, String icon) {
-        this.setTemp(temp);
-        this.setDateString(dateString);
-        this.setDescription(description);
-        this.setWindSpeed(windSpeed);
-        this.setIcon(icon);
-    }
-
     public String getTempMin() {
-        return temp_min;
-    }
-
-    public void setTempMin(String temp_min) {
-        this.temp_min = temp_min;
+        return mainData.getTempMin();
     }
 
     public String getTempMax() {
-        return temp_max;
-    }
-
-    public void setTempMax(String temp_max) {
-        this.temp_max = temp_max;
+        return mainData.getTempMax();
     }
 
     public String getTemp() {
-        return temp;
-    }
-
-    public void setTemp(String temp) {
-        this.temp = temp;
+        return mainData.getCurrentTemp();
     }
 
     public String getDateString() {
-        return dateString;
-    }
-
-    public void setDateString(String dateString) {
-        this.dateString = dateString;
+        return date;
     }
 
     public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
+        return desc.getDescription();
     }
 
     public String getWindSpeed() {
-        return windSpeed;
-    }
-
-    public void setWindSpeed(String windSpeed) {
-        this.windSpeed = windSpeed;
+        return wind.getWindSpeed();
     }
 
     public String getDate() {
-        return dateString.substring(0, 10);
+        return date.substring(0, 10);
     }
 
     public String getIcon() {
-        return icon;
-    }
-
-    public void setIcon(String icon) {
-        this.icon = icon;
-
-        DownloadIcon task = new DownloadIcon();
-        try {
-            image = task.execute(icon).get();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        }
+        return desc.getIcon();
     }
 
     public Bitmap getImage() {
+        if (image == null) {
+            DownloadIcon task = new DownloadIcon();
+
+            task.execute(getIcon());
+            try {
+                image = task.get();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            } catch (ExecutionException e) {
+                e.printStackTrace();
+            }
+        }
         return image;
     }
 
@@ -121,7 +83,7 @@ public class HourlyData {
         // 0123456789012345678
     }
 
-    class DownloadIcon extends AsyncTask<String, Void, Bitmap> {
+    static class DownloadIcon extends AsyncTask<String, Void, Bitmap> {
 
         private static final String BASE_ICON_URL = "http://openweathermap.org/img/w/";
 
